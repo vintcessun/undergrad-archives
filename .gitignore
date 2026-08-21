@@ -1,0 +1,60 @@
+# 压缩包 / Archives
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.bz2
+*.xz
+
+# 视频 / Video
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wmv
+*.flv
+*.rmvb
+
+# 可执行文件与编译产物 / Binaries & build output
+*.exe
+*.dll
+*.lib
+*.pdb
+*.obj
+*.ilk
+*.exp
+*.pch
+*.pyc
+*.pyo
+*.class
+*.jar
+*.war
+*.so
+*.o
+*.a
+*.msi
+*.iso
+*.bin
+*.cab
+
+# 大体积数据文件 / Large data blobs
+*.idx
+*.pack
+*.dat
+*.ppm
+*.wav
+
+# 构建目录 / Build directories
+node_modules/
+__pycache__/
+.vs/
+.idea/
+Debug/
+Release/
+x64/
+
+# 系统文件 / OS cruft
+desktop.ini
+Thumbs.db
+.DS_Store
