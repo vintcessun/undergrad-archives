@@ -1,0 +1,40 @@
+g++ -c main.cpp -I"C:\Users\kaich\Documents\VS_library\SFML-2.5.1\include"   
+
+g++ main.o -o main -L"C:\Users\kaich\Documents\VS_library\SFML-2.5.1\lib" -lsfml-graphics -lsfml-window -lsfml-system
+
+//.dll files from bin are in same folder as main.o
+
+.\main
+
+
+
+
+
+
+
+//without adding dll files
+
+g++ -c main.cpp -I"C:\Users\kaich\Documents\VS_library\SFML-2.5.1\include" -DSFML_STATIC
+
+g++ main.o -o main -L"C:\Users\kaich\Documents\VS_library\SFML-2.5.1\lib" -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreetype -lwinmm -lgdi32 -mwindows
+
+//Now creates new application with terminal
+
+
+/*
+Side note, you need to add more dependencies for audio
+the corresponding dependencies for each module can be found on the SFML website.
+DEPENDENCY ORDER MATTERS.
+
+g++ *.o -o dinosaur_game -L"C:\Users\kaich\Documents\VS_library\SFML-2.5.1\lib" -lstdc++fs -lsfml-graphics-s -lsfml-window-s -lsfml-audio-s -lsfml-system-s -lopengl32 -lfreetype -lwinmm -lopenal32 -lflac -lvorbisenc -lvorbisfile -lvorbis -logg -lgdi32 -mwindows -lsfml-main
+
+*/
+
+
+
+
+
+// Without terminal
+
+g++ main.o -o main -L"C:\Users\kaich\Documents\VS_library\SFML-2.5.1\lib" -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreetype -lwinmm -lgdi32 -mwindows -lsfml-main
+
