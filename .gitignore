@@ -58,3 +58,6 @@ x64/
 desktop.ini
 Thumbs.db
 .DS_Store
+
+# xmake 构建缓存 / xmake build cache
+.xmake/
