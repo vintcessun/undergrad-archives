@@ -1,0 +1,12 @@
+# ninja log v7
+35	5858	8010495486652567	CMakeFiles/MyOpenGLProject.dir/src/exp6.cpp.obj	d065ec07cc3040c5
+3	153	8010496478639358	build.ninja	ec373358850008d4
+3	153	8010496478639358	C:/Users/vintces/OneDrive - stu.xmu.edu.cn/学校/课程/大二下/计图/实验6/build/cmake_install.cmake	ec373358850008d4
+14	1270	8010496479201258	CMakeFiles/MyOpenGLProject.dir/src/exp6.cpp.obj	d065ec07cc3040c5
+1272	1417	8010496491786229	MyOpenGLProject.exe	4f5d8239b091dc0f
+2	1167	8010497229867892	CMakeFiles/MyOpenGLProject.dir/src/exp6.cpp.obj	d065ec07cc3040c5
+1168	1300	8010497241534558	MyOpenGLProject.exe	4f5d8239b091dc0f
+22	3243	8010526384405536	CMakeFiles/MyOpenGLProject.dir/src/exp6.cpp.obj	d065ec07cc3040c5
+3272	5378	8010526416914605	MyOpenGLProject.exe	4f5d8239b091dc0f
+3	1656	8010527611083156	CMakeFiles/MyOpenGLProject.dir/src/exp6.cpp.obj	d065ec07cc3040c5
+1658	1859	8010527627662243	MyOpenGLProject.exe	4f5d8239b091dc0f

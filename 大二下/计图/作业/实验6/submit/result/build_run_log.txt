@@ -1,0 +1,20 @@
+实验目录: exp6_stu
+系统环境: Windows PowerShell
+CMake 版本: 4.2.1
+编译器: Clang 22.1.1 (CMake 检测)
+配置命令: cmake -S . -B build
+编译命令: cmake --build build
+首次运行命令: build\\MyOpenGLProject.exe
+首次运行耗时: 5620 ms
+再次编译: 成功
+第二次运行耗时: 5788 ms
+可执行文件: build\\MyOpenGLProject.exe
+原始输出文件: result\\output_original.ppm
+修改后输出文件: result\\output_modified.ppm
+当前输出文件: result\\output.ppm
+PNG 转换: 未执行。当前环境未检测到 ImageMagick 的 magick 命令，故保留 ppm 结果。
+最小修复说明:
+1. CMakeLists.txt 去除了当前工程未实际使用的 freeglut/opengl32/glu32 链接，仅保留 Eigen3::Eigen，解决链接失败。
+2. src/camera.hpp 按 u/v 参数返回正确成像光线。
+3. src/raytracer.hpp 补全阴影、反射、折射递归逻辑，使程序可正常输出渲染结果。
+4. src/exp6.cpp 做了最小可见参数修改，用于生成 modified 版本结果。

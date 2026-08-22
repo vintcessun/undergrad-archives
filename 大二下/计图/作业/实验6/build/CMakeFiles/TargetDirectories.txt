@@ -1,0 +1,3 @@
+C:/Users/vintces/OneDrive - stu.xmu.edu.cn/学校/课程/大二下/计图/实验6/build/CMakeFiles/MyOpenGLProject.dir
+C:/Users/vintces/OneDrive - stu.xmu.edu.cn/学校/课程/大二下/计图/实验6/build/CMakeFiles/edit_cache.dir
+C:/Users/vintces/OneDrive - stu.xmu.edu.cn/学校/课程/大二下/计图/实验6/build/CMakeFiles/rebuild_cache.dir
