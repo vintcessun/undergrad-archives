@@ -1,0 +1,10 @@
+checking.c 已完成
+echo_eof.c 已完成
+echo.c 已完成
+file_eof.c 已完成
+filelist.txt 未完成
+guess.c 已完成
+menuette.c 已完成
+newguess.c 已完成
+showchar1.c 已完成
+showchar2.c 已完成

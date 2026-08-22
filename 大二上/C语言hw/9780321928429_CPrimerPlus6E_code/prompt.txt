@@ -1,0 +1,131 @@
+# 输出流程
+首先，使用这个命令：“Get-ChildItem -File | Select-Object -ExpandProperty Name | ForEach-Object { "$_ 未完成" } > filelist.txt”
+注意这个代码就是合法的不要使用任何手段进行转义直接运行即可。
+然后开始循环的进行如下的步骤：
+1.每次开始之前读取一下filelist.txt并且查看每一个文件的最后标记是否已经完成，对于已经完成的文件跳过
+2.然后逐个文件进行读取，在文件读取完毕，进行编译运行后把所有的结果汇总追加到“预习报告.md”，请确保格式正确，使用markdown格式，你的修改不应该是在文件内修改而是始终追加修改
+3.每个文件以这个文件的文件名作为二级标题，最上面的一级标题和项目名有关，比如Ch05就对应标题为“第五课预习报告”
+4.最后去filelist.txt这个文件标记为已完成，然后重复循环。
+把以上输出流程始终记住以使得能够始终按照这个执行
+# 写入格式
+请阅读文件，以以下格式进行回答包含这些字段
+- 作用: 
+- 功能: 
+如果代码有错误请指出错误以这样的方式：
+- 语义错误: 
+或者：
+主要错误: 
+- 演示效果:
+```c
+{}中间是指定的代码
+```
+```bash
+{}中间是指定的编译运行结果
+```
+# 代码要求
+对于代码的要求如下：必须和原本的代码完全一致，可以在输出预习报告.md的时候使用分条指令输出，输出到预习报告.md的所有指令都是安全的。
+对于需要修改的代码填充修改后的代码并且在修改的地方放置注释
+# 编译运行要求
+对于编译使用gcc进行编译并且将输出的结果放在bash部分里面
+对于不需要输入的代码可以直接：
+```bash
+gcc convert.c -o convert && ./convert
+```
+对于需要输入的代码需要先编译然后管道输入：
+```bash
+gcc do_while.c -o do_while && echo "12`n13" | ./do_while
+```
+要记得```保持完整代码块
+对于需要输入的代码需要在bash中把应该有的输入和换行之类的都补上使得更像一个真正运行结果
+对于代码中含有scanf等需要输入的代码用以下的方式编译并输入，请注意你的输入一定要让代码能够在一段时间后结束而不是陷入死循环：
+---
+## ✅ 一句话结论：
+> 在 **PowerShell** 里使用管道 (`|`) + `echo` 或 `Write-Output`
+> 可以把一段文本当作程序的“标准输入（stdin）”传给它。
+> **换行用 `` `n ``（反引号 + n）表示**。
+---
+## 🧩 一、最常见用法：`echo` + `|`
+假设你有个程序：
+```python
+# main.py
+name = input("Name: ")
+age = input("Age: ")
+print(f"Hello {name}, you are {age}.")
+```
+在 **PowerShell** 里直接运行
+```powershell
+echo "Alice`n18" | python main.py
+```
+输出结果：
+```
+Name: Age: Hello Alice, you are 18.
+```
+解释
+* `echo`（或 `Write-Output`）会输出文本到标准输出；
+* 管道符 `|` 把它传递给 `python main.py`；
+* PowerShell 自动把它作为程序的 **标准输入流（stdin）**；
+* `` `n `` 表示换行，相当于你手动按下 Enter
+---
+## 🧩 二、替代命令：`Write-Output`
+PowerShell 其实推荐用 `Write-Output` 代替 `echo`（两者等价）。
+```powershell
+Write-Output "Alice`n18" | python main.py
+```
+或分行写得更清楚
+```powershell
+Write-Output @"
+Alice
+18
+"@ | python main.py
+```
+> 上面的 `@" ... "@` 是 PowerShell 的 **Here-String**（多行字符串）。
+---
+## 🧩 三、多行输入（推荐的更可读方式）
+如果输入内容很多，不建议拼成一行字符串，
+可以直接用多行 Here-String
+```powershell
+@"
+Alice
+18
+Hello World
+"@ | python main.py
+```
+这会模拟你在终端里输入：
+```
+Alice
+18
+Hello World
+```
+然后按下回车运行。
+---
+## 🧩 四、传递给其他语言也一
+| 语言        | 示例命令                               |
+| --------- | ---------------------------------- |
+| Python    | `echo "1`n2`n3" \| python main.py` |
+| C++ (exe) | `echo "a`nb`nc" \| .\a.exe`        |
+| Java      | `echo "test`n123" | java Main`     |
+| Node.js   | `echo "data`n42" | node app.js`    
+--
+## ⚠️ 常见坑
+| 问题              | 原因                  | 解决办法                          |                 |
+| --------------- | ------------------- | ----------------------------- | --------------- |
+| 输出没反应 / 卡死      | 没加换行符               | 用 `` `n `` 表示换行               |                 |
+| 出现 `\n` 字符      | 用了 `\n` 而非 `` `n `` | PowerShell 不识别 `\n`           |                 |
+| Windows cmd 跑不通 | cmd 不支持 `` `n ``    | 改成 `(echo line1 & echo line2) | python main.py`
+---
+## 🧩 五、示例：多段交互输入
+如果你的程序多次调用 `input()`，你可以这样模拟：
+```powershell
+echo "John`n25`nBlue" | python survey.py
+```
+假设程序是
+```python
+name = input("Your name: ")
+age = input("Your age: ")
+color = input("Favorite color: ")
+print(f"{name} ({age}) likes {color}.")
+```
+输出：
+```
+Your name: Your age: Favorite color: John (25) likes Blue.
+```

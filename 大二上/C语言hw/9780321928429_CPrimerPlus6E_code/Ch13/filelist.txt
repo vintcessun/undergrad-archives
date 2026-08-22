@@ -1,0 +1,9 @@
+addaword.c 已完成
+append.c 已完成
+count.c 已完成
+eddy 未完成
+filelist.txt 未完成
+randbin.c 已完成
+reducto.c 已完成
+reverse.c 已完成
+wordy 已完成
